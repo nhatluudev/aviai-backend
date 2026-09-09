@@ -4,7 +4,7 @@ Models are loaded once at app startup to avoid delays during WebSocket connectio
 """
 
 from rich.console import Console
-from agent.config import TTS_VOICE
+from agent.config import TTS_PROVIDER, TTS_VOICE
 
 console = Console()
 
@@ -18,7 +18,12 @@ def init_models():
     global _tts_instance, _stt_instance
 
     console.print("[cyan]Loading TTS model...[/cyan]")
-    from agent.io.tts.tts_pocket import TextToSpeechService
+    if TTS_PROVIDER == "pocket":
+        from agent.io.tts.tts_pocket import TextToSpeechService
+    elif TTS_PROVIDER == "openrouter":
+        from agent.io.tts.tts_openrouter import TextToSpeechService
+    else:
+        raise ValueError(f"Unsupported TTS_PROVIDER: {TTS_PROVIDER}")
     _tts_instance = TextToSpeechService(voice=TTS_VOICE)
     console.print("[green]✓ TTS model loaded[/green]")
 

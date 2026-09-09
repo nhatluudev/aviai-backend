@@ -1,0 +1,20 @@
+{
+    "conversation_history_id": "02011c3f-ac04-45d2-a564-23c15567320a",
+    "session_id": "b95d1824-7f44-420e-be47-51ef29d68b59",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [
+        {
+            "timestamp": 1788950774.297555,
+            "datetime": "2026-09-09T17:46:14.297555+07:00",
+            "user_query": "hello",
+            "response": "Hello. Before I talk about anything, could you please introduce yourself and explain what this interview is for?",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a tense, slightly anxious but polite tone, measured pace.",
+            "avatar_instructions": "fear",
+            "llm_time": 4.65,
+            "tts_time": 7.44
+        }
+    ],
+    "timestamp": "2026-09-09T17:45:58.647658+07:00"
+}

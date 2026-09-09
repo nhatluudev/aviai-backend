@@ -1,0 +1,8 @@
+{
+    "conversation_history_id": "5a713492-3cd1-4ff6-8841-c210c6cb8baf",
+    "session_id": "6feb45e9-1595-4492-b16a-73be161ca5fb",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [],
+    "timestamp": "2026-09-09T17:45:50.783751+07:00"
+}
