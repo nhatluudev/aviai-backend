@@ -1,0 +1,42 @@
+{
+    "conversation_history_id": "963a4708-73d2-4c4c-a1a4-e765872412a1",
+    "session_id": "453294b0-1abd-4905-935b-55962f60b1df",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [
+        {
+            "timestamp": 1788950791.054502,
+            "datetime": "2026-09-09T17:46:31.054502+07:00",
+            "user_query": "could you introduce yourself",
+            "response": "I'm Sarah Bellamy. I'm a regional sales manager based in Bundaberg.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a slightly nervous, professional tone, clear and measured pace.",
+            "avatar_instructions": "fear",
+            "llm_time": 3.03,
+            "tts_time": 0.48
+        },
+        {
+            "timestamp": 1788950805.399933,
+            "datetime": "2026-09-09T17:46:45.399933+07:00",
+            "user_query": "I'm not going to tell me about accident.",
+            "response": "Alright.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with guarded caution and mild anxiety, steady pace.",
+            "avatar_instructions": "fear",
+            "llm_time": 2.78,
+            "tts_time": 0.11
+        },
+        {
+            "timestamp": 1788950818.460564,
+            "datetime": "2026-09-09T17:46:58.460564+07:00",
+            "user_query": "Could you tell me about the accident?",
+            "response": "I stopped at Gympie Aerodrome mid-afternoon and saw a small aircraft coming in to land from my right. The landing looked normal at first, but when it touched down it veered off the runway to the right in what felt like strong wind. I lost sight of it partway because a building blocked my view, so I didn't see the final moment or where it ended up. Not long after, someone came from that direction and called out that the pilot was hurt but not critical and asked me to get help, so I went back to my car, drove until I had reception, and called emergency services.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with tension and anxiety, slightly faster pace, staying professional.",
+            "avatar_instructions": "fear",
+            "llm_time": 5.24,
+            "tts_time": 2.72
+        }
+    ],
+    "timestamp": "2026-09-09T17:46:18.983477+07:00"
+}

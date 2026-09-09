@@ -1,0 +1,20 @@
+{
+    "conversation_history_id": "e8899c23-7bbd-4027-92f9-1a088b3e8634",
+    "session_id": "91d7e06d-79e1-4606-bbd1-df7d988c3239",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [
+        {
+            "timestamp": 1788950913.439022,
+            "datetime": "2026-09-09T17:48:33.439022+07:00",
+            "user_query": "could you introduce yourself",
+            "response": "I'm Sarah Bellamy. I'm a regional sales manager based in Bundaberg, and I was the member of the public who stopped near Gympie Aerodrome and saw part of the incident.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a slightly nervous, professional tone, clear and measured pace.",
+            "avatar_instructions": "fear",
+            "llm_time": 4.88,
+            "tts_time": 0.86
+        }
+    ],
+    "timestamp": "2026-09-09T17:48:22.852413+07:00"
+}
