@@ -32,12 +32,13 @@ Return ONLY the conversation summary in the specified JSON format.
 
 
 def get_conversation_summary_chain():
+    # Val silently ignores response_format={"type":"json_object"}; PydanticOutputParser
+    # already strips markdown fences via parse_json_markdown, so no fallback is needed here.
     llm = ChatOpenAI(
         base_url=LLM_BASE_URL,
         api_key=LLM_API_KEY,
         model=LLM_MODEL,
         temperature=0.3,
-        model_kwargs={"response_format": {"type": "json_object"}},
     )
 
     parser = PydanticOutputParser(

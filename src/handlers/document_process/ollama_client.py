@@ -1,12 +1,9 @@
-import os
 import httpx
 import re
+from agent.config import LLM_MODEL, LLM_BASE_URL, LLM_API_KEY
 from .schema import DocumentLLMResp
 
-OPENROUTER_BASE_URL = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
-OPENROUTER_URL = f"{OPENROUTER_BASE_URL}/chat/completions"
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
-MODEL = os.environ.get("OPENROUTER_MODEL_NAME", "openai/gpt-4o-mini")
+VAL_CHAT_URL = f"{LLM_BASE_URL.rstrip('/')}/chat/completions"
 
 SYSTEM_PROMPT = """You are scenario-DocExtractor. You extract metadata from documents.
 You MUST return a JSON object with exactly these fields:
@@ -33,18 +30,20 @@ def _strip_markdown_json(text: str) -> str:
 
 async def extract_metadata(text: str) -> DocumentLLMResp:
     payload = {
-        "model": MODEL,
+        "model": LLM_MODEL,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": f"Extract metadata from the following document:\n\n{text}"},
         ],
         "stream": False,
+        # response_format=json_object is silently ignored on Val; _strip_markdown_json
+        # below handles the fenced prose it returns instead.
         "response_format": {"type": "json_object"},
     }
-    headers = {"Authorization": f"Bearer {OPENROUTER_API_KEY}"}
+    headers = {"Authorization": f"Bearer {LLM_API_KEY}"}
 
     async with httpx.AsyncClient(timeout=120) as client:
-        r = await client.post(OPENROUTER_URL, json=payload, headers=headers)
+        r = await client.post(VAL_CHAT_URL, json=payload, headers=headers)
         r.raise_for_status()
 
     data = r.json()

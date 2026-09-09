@@ -21,7 +21,8 @@ Notes
 
 from __future__ import annotations
 from langchain_openai import ChatOpenAI
-import os
+
+from agent.config import LLM_MODEL, LLM_BASE_URL, LLM_API_KEY
 
 import json
 from dataclasses import dataclass
@@ -309,12 +310,12 @@ Focus on evidence-based evaluation. If something is not clearly demonstrated, ma
 def run_llm(
     transcript: List[Dict[str, Any]],
     emotions: List[Dict[str, Any]],
-    model: str = "openai/gpt-4o-mini"
+    model: str = LLM_MODEL
 ) -> LLMJudgement:
     chat = ChatOpenAI(
-        model=os.getenv("OPENROUTER_MODEL_NAME", model),
-        base_url=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
-        api_key=os.getenv("OPENROUTER_API_KEY"),
+        model=model,
+        base_url=LLM_BASE_URL,
+        api_key=LLM_API_KEY,
         temperature=0.0
     )
 
@@ -592,7 +593,7 @@ def make_coaching(j: LLMJudgement) -> List[Dict[str, str]]:
 
 def evaluate_ci_performance(transcript: List[Dict[str, Any]],
                             emotions: List[Dict[str, Any]],
-                            model: str = "gpt-4o-mini") -> EvaluationResult:
+                            model: str = LLM_MODEL) -> EvaluationResult:
     llm_out = run_llm(transcript, emotions, model=model)
     scoring = compute_scores(llm_out)
     coaching = make_coaching(llm_out)
@@ -638,7 +639,7 @@ SAMPLE_EMOTIONS = [
 
 def main():
     print("Running CI scoring demo...")
-    result = evaluate_ci_performance(SAMPLE_TRANSCRIPT, SAMPLE_EMOTIONS, model="gpt-4o-mini")
+    result = evaluate_ci_performance(SAMPLE_TRANSCRIPT, SAMPLE_EMOTIONS)
     print("\n=== LLM Judgement ===")
     print(json.dumps(result.llm.model_dump(), ensure_ascii=False, indent=2))
     print("\n=== Scores ===")

@@ -52,10 +52,14 @@ class ConversationHandler:
             "personal_characteristics": data.get("personal_characteristics", ""),
             "attitude_in_interview": data.get("attitude_in_interview", ""),
             "rule_interview": data.get("rule_interview", ""),
-            "scenario_text": data.get("usecase_summary", ""),
+            "scenario_text": data.get("scenario_text", ""),
             "character_name": data.get("character_name", ""),
             "prompt_id": data.get("prompt_id", "")
         }
+
+        console.print(f"[cyan]============ Scenario Chosen ============[/cyan]")
+        console.print(self.scenario_data)
+        console.print(f"[cyan]==========================================[/cyan]")
 
         # Create session-specific LLM service with scenario data
         prompt = PromptBuilder(
@@ -75,14 +79,16 @@ class ConversationHandler:
                 model=os.environ.get("MODEL_NAME"),
             )
             # console.print(f"[green]✓ Using LM Studio with model: {model}[/green]")
-        else:  # default to openrouter
+        else:  # default to RMIT Val
+            # Val silently ignores response_format={"type":"json_object"} (returns
+            # markdown-fenced prose instead of erroring), so it isn't set here —
+            # LLMService.parse_response already tolerates fenced/loose JSON output.
             llm = ChatOpenAI(
                 model=LLM_MODEL,
                 base_url=LLM_BASE_URL,
                 api_key=LLM_API_KEY,
-                model_kwargs={"response_format": {"type": "json_object"}},
             )
-            console.print(f"[green]Using OpenRouter model: {LLM_MODEL}[/green]")
+            console.print(f"[green]Using Val model: {LLM_MODEL}[/green]")
         
         chain = prompt | llm
         chat = RunnableWithMessageHistory(
