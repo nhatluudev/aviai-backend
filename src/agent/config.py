@@ -8,6 +8,7 @@ LLM_BASE_URL = os.getenv("RMIT_VAL_BASE_URL", "https://val.rmit.edu.au/api/")
 LLM_API_KEY = os.getenv("RMIT_VAL_API_KEY")
 
 TTS_VOICE = os.getenv("TTS_VOICE", "cosette")
+TTS_PROVIDER = os.getenv("TTS_PROVIDER", "openrouter")
 
 # LLM_PROVIDER="lmstudio"
 # LLM_MODEL="qwen/qwen3-vl-8b"
