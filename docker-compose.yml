@@ -11,10 +11,10 @@ services:
     environment:
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
-      DB_HOST: db
-      DB_PORT: 5432
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
       DB_NAME: ${DB_NAME}
-      DB_SSLMODE: disable
+      DB_SSLMODE: ${DB_SSLMODE}
       SECRET_KEY: ${SECRET_KEY}
       ALGORITHM: ${ALGORITHM}
       OLLAMA_MODEL_URL: http://host.docker.internal:11434
@@ -26,33 +26,9 @@ services:
       RMIT_VAL_BASE_URL: ${RMIT_VAL_BASE_URL}
       RMIT_VAL_MODEL: ${RMIT_VAL_MODEL}
       TTS_VOICE: ${TTS_VOICE}
-    depends_on:
-      db:
-        condition: service_healthy
     volumes:
       - ./src/agent/conversation:/app/src/agent/conversation
       - ./recordings:/recordings
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
-
-  db:
-    image: postgres:16-alpine
-    container_name: aviai-db
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-    ports:
-      - "5434:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    restart: unless-stopped
-
-volumes:
-  postgres_data:
