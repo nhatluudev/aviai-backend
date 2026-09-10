@@ -69,5 +69,6 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
 # Run from src
 WORKDIR /app/src
 
-# Shell form: run migrations, then start FastAPI
-CMD sh -c "cd /app && alembic upgrade head && cd /app/src && exec uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1"
+# Migrations run as Render's Pre-Deploy Command (see README), not here —
+# doing it here would delay port binding and trip Render's port-scan timeout.
+CMD ["sh", "-c", "exec uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1"]
