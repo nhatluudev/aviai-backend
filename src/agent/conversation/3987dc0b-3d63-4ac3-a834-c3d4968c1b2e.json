@@ -1,0 +1,75 @@
+{
+    "conversation_history_id": "4a896917-f6ae-43f1-9533-788658fcd5d2",
+    "session_id": "3987dc0b-3d63-4ac3-a834-c3d4968c1b2e",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [
+        {
+            "timestamp": 1789035229.76279,
+            "datetime": "2026-09-10T17:13:49.762790+07:00",
+            "user_query": "Hello",
+            "response": "Hello.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a calm, professional tone, clear and measured pace",
+            "avatar_instructions": "default",
+            "llm_time": 4.7,
+            "tts_time": 1.76
+        },
+        {
+            "timestamp": 1789035263.253392,
+            "datetime": "2026-09-10T17:14:23.253392+07:00",
+            "user_query": "My name is Green Lantern, can you help to descibe what happened to you?",
+            "response": "During approach to land the Boeing 747-400, we suddenly heard a loud noise and felt vibration. The captain told the co-pilot to keep flying and quickly checked for engine issues. As we got lower the vibration became strong, but the crew stayed calm and landed safely, and I recorded the incident on video.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with tension and urgency, slightly higher pitch, and faster pace",
+            "avatar_instructions": "fear",
+            "llm_time": 3.82,
+            "tts_time": 2.96
+        },
+        {
+            "timestamp": 1789035288.249287,
+            "datetime": "2026-09-10T17:14:48.249287+07:00",
+            "user_query": "Feel sad?",
+            "response": "A bit, yes. It was stressful and unsettling to feel that hit and the strong vibrations so close to landing.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a somber tone, slightly slower pace, and softer volume",
+            "avatar_instructions": "sad",
+            "llm_time": 3.71,
+            "tts_time": 2.43
+        },
+        {
+            "timestamp": 1789035338.678664,
+            "datetime": "2026-09-10T17:15:38.678664+07:00",
+            "user_query": "Are you angry?",
+            "response": "No, I am not angry. I was more anxious and focused on what was happening.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a calm, professional tone, clear and measured pace",
+            "avatar_instructions": "fear",
+            "llm_time": 3.36,
+            "tts_time": 2.18
+        },
+        {
+            "timestamp": 1789035356.197817,
+            "datetime": "2026-09-10T17:15:56.197817+07:00",
+            "user_query": "Can you express how you feel in words?",
+            "response": "I felt anxious and tense when the noise and vibration happened, then very focused as we continued the approach, and relieved after we landed safely.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with tension and urgency, slightly higher pitch, and faster pace",
+            "avatar_instructions": "fear",
+            "llm_time": 3.6,
+            "tts_time": 2.55
+        },
+        {
+            "timestamp": 1789035390.973694,
+            "datetime": "2026-09-10T17:16:30.973694+07:00",
+            "user_query": "that must have been tough.  for you",
+            "response": "Yes, it was tough, especially because it happened so close to landing. I was stressed but trying to stay calm and focused.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a somber tone, slightly slower pace, and softer volume",
+            "avatar_instructions": "sad",
+            "llm_time": 3.88,
+            "tts_time": 2.62
+        }
+    ],
+    "timestamp": "2026-09-10T17:13:40.054063+07:00"
+}

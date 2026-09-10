@@ -1,0 +1,42 @@
+{
+    "conversation_history_id": "1c3ae988-9572-4628-b7cc-470478693f41",
+    "session_id": "3c5fd86b-4f51-4953-b390-9d89990d3e5d",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [
+        {
+            "timestamp": 1789034257.435206,
+            "datetime": "2026-09-10T16:57:37.435206+07:00",
+            "user_query": "Hello",
+            "response": "Hello.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a calm, professional tone, clear and measured pace",
+            "avatar_instructions": "default",
+            "llm_time": 4.07,
+            "tts_time": 1.65
+        },
+        {
+            "timestamp": 1789034275.331839,
+            "datetime": "2026-09-10T16:57:55.331839+07:00",
+            "user_query": "I am Hal Jordan, Green Lantern",
+            "response": "Hello Mr Hal Jordan.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a calm, professional tone, clear and measured pace",
+            "avatar_instructions": "default",
+            "llm_time": 3.84,
+            "tts_time": 1.82
+        },
+        {
+            "timestamp": 1789034303.561927,
+            "datetime": "2026-09-10T16:58:23.561927+07:00",
+            "user_query": "Tell me about your experieneces",
+            "response": "During approach to land the 747-400, I experienced a sudden loud noise and vibration, then stronger vibrations as we got closer to the ground. The captain told the co-pilot to keep flying and quickly checked for engine damage, and we landed safely while I recorded video and did not interfere.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with tension and urgency, slightly higher pitch, and faster pace",
+            "avatar_instructions": "fear",
+            "llm_time": 4.67,
+            "tts_time": 9.27
+        }
+    ],
+    "timestamp": "2026-09-10T16:57:29.229725+07:00"
+}

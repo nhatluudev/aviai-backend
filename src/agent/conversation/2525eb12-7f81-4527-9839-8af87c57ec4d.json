@@ -1,0 +1,20 @@
+{
+    "conversation_history_id": "82175143-6463-4904-af38-657d6f0a9931",
+    "session_id": "2525eb12-7f81-4527-9839-8af87c57ec4d",
+    "llm_provider": "val",
+    "model": "openai-gpt-5.2",
+    "content": [
+        {
+            "timestamp": 1789034969.301603,
+            "datetime": "2026-09-10T17:09:29.301603+07:00",
+            "user_query": "Hello",
+            "response": "Hello. I am Linh, flight engineer at VAECO.",
+            "user_emotion": "default",
+            "voice_instructions": "Speak with a calm, professional tone, clear and measured pace",
+            "avatar_instructions": "default",
+            "llm_time": 4.78,
+            "tts_time": 2.0
+        }
+    ],
+    "timestamp": "2026-09-10T17:09:19.985700+07:00"
+}
