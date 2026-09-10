@@ -42,7 +42,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libportaudio2 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy virtual environment
+# Copy virtual environment and NLTK data
 COPY --from=builder /app/.venv /app/.venv
 COPY --from=builder /app/nltk_data /app/nltk_data
 
@@ -69,5 +69,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
 # Run from src
 WORKDIR /app/src
 
-# Run migrations, then start FastAPI
-CMD ["sh", "-c", "cd /app && alembic upgrade head && cd /app/src && exec uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1"]
+# Shell form: run migrations, then start FastAPI
+CMD sh -c "cd /app && alembic upgrade head && cd /app/src && exec uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1"
