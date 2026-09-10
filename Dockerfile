@@ -69,6 +69,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
 # Run from src
 WORKDIR /app/src
 
-# Migrations run as Render's Pre-Deploy Command (see README), not here —
-# doing it here would delay port binding and trip Render's port-scan timeout.
+# Migrations run inside main.py's lifespan startup, not here — running them
+# before uvicorn starts would delay port binding and trip Render's port-scan
+# timeout (no separate pre-deploy step on the free tier).
 CMD ["sh", "-c", "exec uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1"]
