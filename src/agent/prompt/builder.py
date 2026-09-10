@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 from agent.prompt.service import PromptService
-from agent.prompt.templates import STATIC_PROMPT, OUTPUT_JSON_RULES
+from agent.prompt.templates import STATIC_PROMPT, OUTPUT_JSON_RULES, SPEECH_NATURALNESS_RULES
 from database.model import Session as DBSession
 from rich.console import Console
 
@@ -81,6 +81,7 @@ class PromptBuilder:
             [
                 ("system", self.system_prompt),
                 ("system", OUTPUT_JSON_RULES),
+                ("system", SPEECH_NATURALNESS_RULES),
                 MessagesPlaceholder(variable_name="history"),
                 ("human", "{input}"),
             ]
